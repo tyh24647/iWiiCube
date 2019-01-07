@@ -1,4 +1,9 @@
-//
+///
+///  WebBrowserViewController
+///
+///  Created by Tyler Hostager on 1/7/19.
+///  Copyright © 2019 Tyler Hostager. All rights reserved.
+///
 
 import UIKit
 import WebKit
@@ -42,7 +47,17 @@ class WebBrowserViewController: UIViewController, UITextFieldDelegate, SFSafariV
         webkitConfiguration.allowsAirPlayForMediaPlayback = true
         webkitConfiguration.allowsInlineMediaPlayback = true
         webkitConfiguration.allowsPictureInPictureMediaPlayback = true
-        webkitConfiguration.applicationNameForUserAgent
+        webkitConfiguration.applicationNameForUserAgent = "iWiiCube"
+        webkitConfiguration.dataDetectorTypes = .all
+        webkitConfiguration.ignoresViewportScaleLimits = true
+        webkitConfiguration.mediaTypesRequiringUserActionForPlayback = [ .video, .audio ]
+        webkitConfiguration.preferences = { () -> WKPreferences in
+            var _ = WKPreferences.init()
+            _.javaScriptEnabled = true
+            _.minimumFontSize = 8.0
+            _.javaScriptCanOpenWindowsAutomatically = false
+            return _
+        }
         
         
         webView = WKWebView(frame: super.view.frame, configuration: WKWebViewConfiguration)

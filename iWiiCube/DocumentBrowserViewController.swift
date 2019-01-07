@@ -1,4 +1,9 @@
-//
+///
+///  DocumentBrowserViewController
+///
+///  Created by Tyler Hostager on 1/7/19.
+///  Copyright © 2019 Tyler Hostager. All rights reserved.
+///
 
 import UIKit
 

@@ -1,6 +1,13 @@
-//
+///
+///  AppDelegate
+///
+///  Created by Tyler Hostager on 1/7/19.
+///  Copyright © 2019 Tyler Hostager. All rights reserved.
+///
 
 import UIKit
+import Foundation
+import Darwin
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -9,11 +16,28 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     private let kStandardUserDefaults = UserDefaults(suiteName: "$(TeamIdentifierPrefix).group.com.tyhostager.iWiiCube")
 
     var window: UIWindow?
-
+    public static var documentsPath: String!
+    public static var libraryPath: String!
     
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        if FileManager.default.fileExists(atPath: AppDelegate.documentsPath) {
+            do {
+                try FileManager.default.createDirectory(atPath: AppDelegate.documentsPath, withIntermediateDirectories: true, attributes: nil)
+            } catch let e {
+                print("ERROR: Unable to create directory at the requested path.\n\tError details: \(e)")
+            }
+        }
+        
+        /*
+        UINavigationBar.appearance().tintColor = .white
+        UIApplication.shared.statusBarStyle = .lightContent
+ */
+        syscall(26, -1, 0, 0, 0)
+        //syscall(SYS_ptrace, 0 /*PTRACE_TRACEME*/, 0, 0, 0)
+        
         return true
     }
 
