@@ -42,25 +42,41 @@
             </objects>
             <point key="canvasLocation" x="-108" y="2053.223388305847"/>
         </scene>
-        <!--Web Browser-->
+        <!--Web Browser View Controller-->
         <scene sceneID="zOf-SW-4Rv">
             <objects>
-                <viewController title="Web Browser" id="Jad-6F-Gzl" customClass="WebBrowserViewController" customModule="iWiiCube" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="Jad-6F-Gzl" customClass="WebBrowserViewController" customModule="iWiiCube" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="LXK-m6-Wuu">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <wkWebView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aWg-jM-b1G">
-                                <rect key="frame" x="0.0" y="58" width="375" height="609"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <wkWebView contentMode="scaleToFill" allowsBackForwardNavigationGestures="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aWg-jM-b1G">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <wkWebViewConfiguration key="configuration">
-                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
+                                    <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" audio="YES" video="YES"/>
                                     <wkPreferences key="preferences"/>
                                 </wkWebViewConfiguration>
                             </wkWebView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XKL-LO-yeL">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
+                            <navigationBar contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" translatesAutoresizingMaskIntoConstraints="NO" id="PNi-aN-DlC">
+                                <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                                <items>
+                                    <navigationItem largeTitleDisplayMode="always" id="qWP-TZ-t1L"/>
+                                </items>
+                            </navigationBar>
+                            <button hidden="YES" opaque="NO" contentMode="redraw" semanticContentAttribute="forceRightToLeft" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQE-wW-ykM">
+                                <rect key="frame" x="319" y="27" width="48" height="30"/>
+                                <state key="normal" title="Cancel"/>
+                                <connections>
+                                    <action selector="cancelBtnPressed:" destination="Jad-6F-Gzl" eventType="touchUpInside" id="zNN-R2-GGc"/>
+                                </connections>
+                            </button>
                             <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search the web for ROM files..." textAlignment="natural" adjustsFontForContentSizeCategory="YES" minimumFontSize="17" clearButtonMode="whileEditing" translatesAutoresizingMaskIntoConstraints="NO" id="YCw-ik-h5x">
-                                <rect key="frame" x="8" y="20" width="221" height="30"/>
+                                <rect key="frame" x="8" y="27" width="359" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="eNy-Hu-eij"/>
                                 </constraints>
@@ -71,33 +87,71 @@
                                 <connections>
                                     <action selector="searchTFDidBeginEditing:" destination="Jad-6F-Gzl" eventType="editingDidBegin" id="5uY-ZC-bBF"/>
                                     <action selector="searchTFDidEndEditing:" destination="Jad-6F-Gzl" eventType="editingDidEnd" id="vPr-cv-jer"/>
+                                    <action selector="searchTFReturnActionTriggered:" destination="Jad-6F-Gzl" eventType="primaryActionTriggered" id="Iha-m0-jGy"/>
                                     <action selector="searchTFSelected:" destination="Jad-6F-Gzl" eventType="touchUpInside" id="AWr-Zi-YTD"/>
+                                    <outlet property="delegate" destination="Jad-6F-Gzl" id="bgG-G7-tQe"/>
                                 </connections>
                             </textField>
-                            <button hidden="YES" opaque="NO" contentMode="redraw" semanticContentAttribute="forceRightToLeft" fixedFrame="YES" contentHorizontalAlignment="right" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vQE-wW-ykM">
-                                <rect key="frame" x="315" y="20" width="48" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Cancel"/>
-                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="PNi-aN-DlC" firstAttribute="top" secondItem="aWg-jM-b1G" secondAttribute="top" constant="20" id="3NL-tE-g9M"/>
+                            <constraint firstItem="PNi-aN-DlC" firstAttribute="leading" secondItem="aWg-jM-b1G" secondAttribute="leading" id="41V-sa-9ZY"/>
+                            <constraint firstItem="PNi-aN-DlC" firstAttribute="top" secondItem="Qix-MY-lhy" secondAttribute="top" id="5td-Fj-qVp"/>
                             <constraint firstItem="YCw-ik-h5x" firstAttribute="leading" secondItem="Qix-MY-lhy" secondAttribute="leading" constant="8" id="CKZ-tD-vod"/>
-                            <constraint firstItem="YCw-ik-h5x" firstAttribute="top" secondItem="Qix-MY-lhy" secondAttribute="top" id="arI-Cb-oOg"/>
-                            <constraint firstItem="Qix-MY-lhy" firstAttribute="trailing" secondItem="YCw-ik-h5x" secondAttribute="trailing" constant="146" id="ivt-Ig-us5"/>
+                            <constraint firstItem="XKL-LO-yeL" firstAttribute="leading" secondItem="LXK-m6-Wuu" secondAttribute="leading" id="Cph-In-fuv"/>
+                            <constraint firstItem="YCw-ik-h5x" firstAttribute="leading" secondItem="Qix-MY-lhy" secondAttribute="leading" constant="8" id="Dzq-bJ-p7h"/>
+                            <constraint firstItem="Qix-MY-lhy" firstAttribute="trailing" secondItem="vQE-wW-ykM" secondAttribute="trailing" constant="8" id="FNa-gS-ghj"/>
+                            <constraint firstItem="XKL-LO-yeL" firstAttribute="leading" secondItem="PNi-aN-DlC" secondAttribute="leading" id="FdR-tW-7tQ"/>
+                            <constraint firstItem="XKL-LO-yeL" firstAttribute="top" secondItem="LXK-m6-Wuu" secondAttribute="top" id="G11-p0-I0e"/>
+                            <constraint firstItem="XKL-LO-yeL" firstAttribute="centerX" secondItem="YCw-ik-h5x" secondAttribute="centerX" id="IQj-h5-IF9"/>
+                            <constraint firstItem="XKL-LO-yeL" firstAttribute="trailing" secondItem="PNi-aN-DlC" secondAttribute="trailing" id="Jod-u8-UML"/>
+                            <constraint firstItem="YCw-ik-h5x" firstAttribute="top" secondItem="Qix-MY-lhy" secondAttribute="top" constant="7" id="KuL-8R-TRy"/>
+                            <constraint firstItem="YCw-ik-h5x" firstAttribute="top" secondItem="Qix-MY-lhy" secondAttribute="top" constant="7" id="arI-Cb-oOg"/>
+                            <constraint firstItem="vQE-wW-ykM" firstAttribute="baseline" secondItem="YCw-ik-h5x" secondAttribute="firstBaseline" constant="1" id="bMR-F5-p4C"/>
+                            <constraint firstItem="aWg-jM-b1G" firstAttribute="leading" secondItem="LXK-m6-Wuu" secondAttribute="leading" id="gWt-Ft-TkW"/>
+                            <constraint firstItem="vQE-wW-ykM" firstAttribute="top" secondItem="Qix-MY-lhy" secondAttribute="top" constant="7" id="hkc-Eh-uJU"/>
+                            <constraint firstAttribute="bottom" secondItem="XKL-LO-yeL" secondAttribute="bottom" id="hvx-84-vgT"/>
+                            <constraint firstItem="Qix-MY-lhy" firstAttribute="trailing" secondItem="YCw-ik-h5x" secondAttribute="trailing" constant="8" id="iuj-Xe-Oc2"/>
+                            <constraint firstItem="Qix-MY-lhy" firstAttribute="trailing" secondItem="YCw-ik-h5x" secondAttribute="trailing" constant="8" id="ivt-Ig-us5"/>
+                            <constraint firstAttribute="trailing" secondItem="aWg-jM-b1G" secondAttribute="trailing" id="jKt-oP-6jA"/>
+                            <constraint firstItem="vQE-wW-ykM" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Qix-MY-lhy" secondAttribute="leading" symbolic="YES" id="t3p-P7-HT4"/>
+                            <constraint firstAttribute="bottom" secondItem="aWg-jM-b1G" secondAttribute="bottom" id="t7M-Di-qe9"/>
+                            <constraint firstItem="Qix-MY-lhy" firstAttribute="trailing" secondItem="vQE-wW-ykM" secondAttribute="trailing" constant="8" id="vhf-fy-O5d"/>
+                            <constraint firstItem="vQE-wW-ykM" firstAttribute="top" secondItem="Qix-MY-lhy" secondAttribute="top" constant="7" id="vno-xp-UDX"/>
+                            <constraint firstItem="vQE-wW-ykM" firstAttribute="firstBaseline" secondItem="YCw-ik-h5x" secondAttribute="baseline" constant="1" id="y86-mc-S9C"/>
+                            <constraint firstItem="PNi-aN-DlC" firstAttribute="trailing" secondItem="aWg-jM-b1G" secondAttribute="trailing" id="yhZ-Zq-tpv"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Qix-MY-lhy"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="XKL-LO-yeL"/>
+                            </mask>
+                        </variation>
                     </view>
+                    <tabBarItem key="tabBarItem" systemItem="search" id="Egl-kn-SQf"/>
                     <toolbarItems>
                         <barButtonItem title="Item" id="gfM-xC-2h2"/>
                     </toolbarItems>
+                    <nil key="simulatedTopBarMetrics"/>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <connections>
                         <outlet property="cancelButton" destination="vQE-wW-ykM" id="QDt-6s-uh2"/>
+                        <outlet property="navBar" destination="PNi-aN-DlC" id="Uze-sY-M6c"/>
+                        <outlet property="searchDisplayController" destination="lQ3-UJ-u4t" id="Ab3-Hl-Sv2"/>
                         <outlet property="searchTF" destination="YCw-ik-h5x" id="uol-t8-ouU"/>
+                        <outlet property="webView" destination="aWg-jM-b1G" id="iJC-Sh-KQB"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NbH-GL-gHT" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="lQ3-UJ-u4t">
+                    <connections>
+                        <outlet property="delegate" destination="Jad-6F-Gzl" id="1zG-st-ucY"/>
+                        <outlet property="searchContentsController" destination="Jad-6F-Gzl" id="gy6-wp-qeh"/>
+                        <outlet property="searchResultsDataSource" destination="Jad-6F-Gzl" id="ySc-Ax-mVr"/>
+                        <outlet property="searchResultsDelegate" destination="Jad-6F-Gzl" id="efQ-3x-sm8"/>
+                    </connections>
+                </searchDisplayController>
             </objects>
             <point key="canvasLocation" x="1573.5999999999999" y="210.04497751124438"/>
         </scene>
@@ -144,10 +198,11 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                     </tabBar>
                     <connections>
-                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="CET-IA-2tf"/>
-                        <segue destination="vSn-zD-o6U" kind="relationship" relationship="viewControllers" id="ShY-BP-Ofa"/>
-                        <segue destination="R3b-ox-RVd" kind="relationship" relationship="viewControllers" id="olK-PR-Mud"/>
+                        <segue destination="Jad-6F-Gzl" kind="relationship" relationship="viewControllers" id="1au-zn-IIi"/>
                         <segue destination="SsS-ci-cNq" kind="relationship" relationship="viewControllers" id="k14-0P-OeQ"/>
+                        <segue destination="vSn-zD-o6U" kind="relationship" relationship="viewControllers" id="ShY-BP-Ofa"/>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="viewControllers" id="CET-IA-2tf"/>
+                        <segue destination="R3b-ox-RVd" kind="relationship" relationship="viewControllers" id="olK-PR-Mud"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sxl-wF-Rc9" userLabel="First Responder" sceneMemberID="firstResponder"/>

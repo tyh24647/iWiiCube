@@ -1,20 +1,51 @@
 //
 
 import UIKit
+import WebKit
+import SafariServices
 
+extension SFSafariViewController {
+    public func mainUIView() -> UIView {
+        return super.view!
+    }
+}
 
-class WebBrowserViewController: UIViewController {
-   
+class WebBrowserViewController: UIViewController, UITextFieldDelegate, SFSafariViewControllerDelegate, UINavigationBarDelegate {
     @IBOutlet var searchTF: UITextField!
     @IBOutlet var cancelButton: UIButton!
-    
-//    
+    @IBOutlet var webView: WKWebView!
+    //@IBOutlet var webView: UIView!
+    @IBOutlet var navBar: UINavigationBar!
+
+    ///
     override func viewWillLayoutSubviews() {
+        searchTF.delegate = self
+        navBar.delegate = self
         
+        if self.searchTF.isEnabled && !cancelButton.isHidden {
+            cancelButton.isHidden = true
+        }
     }
     
+    
+    ///
+    ///
+    /// - Parameter animated:
     override func viewWillAppear(_ animated: Bool) {
+        if cancelButton.isHidden {
+            hideCancelBtn(searchTF)
+        }
         
+        //webView = SFSafariViewController(url: URL(string: "http://www.google.com/")!).view
+        let webCoder = NSCoder()
+        let webkitConfiguration = WKWebViewConfiguration(coder: webCoder)!
+        webkitConfiguration.allowsAirPlayForMediaPlayback = true
+        webkitConfiguration.allowsInlineMediaPlayback = true
+        webkitConfiguration.allowsPictureInPictureMediaPlayback = true
+        webkitConfiguration.applicationNameForUserAgent
+        
+        
+        webView = WKWebView(frame: super.view.frame, configuration: WKWebViewConfiguration)
     }
     
     override func viewDidLoad() {
@@ -25,16 +56,76 @@ class WebBrowserViewController: UIViewController {
     
 
     @IBAction func searchTFDidBeginEditing(_ sender: Any) {
-        
+        showCancelBtn(searchTF)
     }
     
     @IBAction func searchTFSelected(_ sender: Any) {
-        
+        showCancelBtn(searchTF)
     }
     
     @IBAction func searchTFDidEndEditing(_ sender: Any) {
+        hideCancelBtn(searchTF)
+    }
+    
+    @IBAction func searchTFReturnActionTriggered(_ sender: Any) {
+        searchTFDidEndEditing(sender)
+        updateFocusIfNeeded()
+        
+        if let url = URL(string: searchTF.text ?? "http://www.google.com/") {
+            var tmp: SFSafariViewController!
+            tmp = SFSafariViewController(url: url)
+            
+            var config: NSObject!
+            tmp.configuration.barCollapsingEnabled = true
+            tmp.configuration.entersReaderIfAvailable = false
+            config = tmp.configuration
+            
+            let webView = SFSafariViewController(url: url, configuration: config as! SFSafariViewController.Configuration)
+            self.webView.addSubview(webView.view)
+            self.webView.autoresizesSubviews = true
+            present(webView, animated: false)
+        }
+        
         
     }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        searchTFReturnActionTriggered(textField)
+        return true
+    }
+    
+    func showTutorial(_ which: Int) {
+        if let url = URL(string: "https://www.hackingwithswift.com/read/\(which + 1)") {
+            let config = SFSafariViewController.Configuration()
+            config.entersReaderIfAvailable = true
+            
+            let vc = SFSafariViewController(url: url, configuration: config)
+            present(vc, animated: true)
+        }
+    }
+    
+    func showCancelBtn(_ sender: Any) -> Void {
+        toggleHideCancelBtn(sender, shouldHide: false)
+    }
+    
+    func hideCancelBtn(_ sender: Any) -> Void {
+        toggleHideCancelBtn(sender, shouldHide: true)
+    }
+    
+    func toggleHideCancelBtn(_ sender: Any, shouldHide: Bool) -> Void {
+        
+        if let tf: UITextField = sender as? UITextField, tf == searchTF {
+            cancelButton.isHidden = shouldHide
+        }
+        
+        searchTF.sizeToFit()
+    }
+    
+    @IBAction func cancelBtnPressed(_ sender: Any) {
+        searchTFDidEndEditing(sender)
+    }
+    
+    
     /*
     // MARK: - Navigation
 

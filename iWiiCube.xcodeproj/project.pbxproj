@@ -72,6 +72,8 @@
 		1A0B662A21E33E85009552BE /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0B660421E33E85009552BE /* CFNetwork.framework */; };
 		1A0B662B21E33E85009552BE /* Metal.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0B660521E33E85009552BE /* Metal.framework */; };
 		1A0B662C21E33E85009552BE /* MetalPerformanceShaders.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A0B660621E33E85009552BE /* MetalPerformanceShaders.framework */; };
+		1AD3649021E34D71003A3D6C /* SafariServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AD3648F21E34D71003A3D6C /* SafariServices.framework */; };
+		1AD3649221E373E4003A3D6C /* WKWebView+URLRequestFromString.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AD3649121E373E4003A3D6C /* WKWebView+URLRequestFromString.swift */; };
 		1AFB604A21E3227700FF67A9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFB604921E3227700FF67A9 /* AppDelegate.swift */; };
 		1AFB604C21E3227700FF67A9 /* DocumentBrowserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFB604B21E3227700FF67A9 /* DocumentBrowserViewController.swift */; };
 		1AFB604E21E3227700FF67A9 /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFB604D21E3227700FF67A9 /* DocumentViewController.swift */; };
@@ -742,6 +744,8 @@
 		1A0B660421E33E85009552BE /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
 		1A0B660521E33E85009552BE /* Metal.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Metal.framework; path = System/Library/Frameworks/Metal.framework; sourceTree = SDKROOT; };
 		1A0B660621E33E85009552BE /* MetalPerformanceShaders.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MetalPerformanceShaders.framework; path = System/Library/Frameworks/MetalPerformanceShaders.framework; sourceTree = SDKROOT; };
+		1AD3648F21E34D71003A3D6C /* SafariServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SafariServices.framework; path = System/Library/Frameworks/SafariServices.framework; sourceTree = SDKROOT; };
+		1AD3649121E373E4003A3D6C /* WKWebView+URLRequestFromString.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+URLRequestFromString.swift"; sourceTree = "<group>"; };
 		1AFB604621E3227700FF67A9 /* iWiiCube.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iWiiCube.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFB604921E3227700FF67A9 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		1AFB604B21E3227700FF67A9 /* DocumentBrowserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentBrowserViewController.swift; sourceTree = "<group>"; };
@@ -771,6 +775,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AD3649021E34D71003A3D6C /* SafariServices.framework in Frameworks */,
 				1A0B660721E33E85009552BE /* CoreFoundation.framework in Frameworks */,
 				1A0B660821E33E85009552BE /* AVFoundation.framework in Frameworks */,
 				1A0B660921E33E85009552BE /* CoreVideo.framework in Frameworks */,
@@ -2001,6 +2006,7 @@
 				1AFB605621E3227800FF67A9 /* LaunchScreen.storyboard */,
 				1AFB605921E3227800FF67A9 /* Info.plist */,
 				1A0B65DD21E33D23009552BE /* WebBrowserViewController.swift */,
+				1AD3649121E373E4003A3D6C /* WKWebView+URLRequestFromString.swift */,
 			);
 			path = iWiiCube;
 			sourceTree = "<group>";
@@ -2026,6 +2032,7 @@
 		1AFB607C21E323C600FF67A9 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				1AD3648F21E34D71003A3D6C /* SafariServices.framework */,
 				1A0B65E221E33E7F009552BE /* AVFoundation.framework */,
 				1A0B65FB21E33E83009552BE /* AVKit.framework */,
 				1A0B660421E33E85009552BE /* CFNetwork.framework */,
@@ -2275,6 +2282,7 @@
 			files = (
 				1AFB605021E3227700FF67A9 /* Document.swift in Sources */,
 				1AFB604E21E3227700FF67A9 /* DocumentViewController.swift in Sources */,
+				1AD3649221E373E4003A3D6C /* WKWebView+URLRequestFromString.swift in Sources */,
 				1A0B65DE21E33D23009552BE /* WebBrowserViewController.swift in Sources */,
 				1AFB604C21E3227700FF67A9 /* DocumentBrowserViewController.swift in Sources */,
 				1AFB604A21E3227700FF67A9 /* AppDelegate.swift in Sources */,
