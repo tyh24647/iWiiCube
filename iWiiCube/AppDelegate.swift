@@ -4,9 +4,13 @@ import UIKit
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
+    
+    let kUserDefaults = UserDefaults(suiteName: "group.com.tyhostager.iWiiCube")!
+    private let kStandardUserDefaults = UserDefaults(suiteName: "$(TeamIdentifierPrefix).group.com.tyhostager.iWiiCube")
 
     var window: UIWindow?
 
+    
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.

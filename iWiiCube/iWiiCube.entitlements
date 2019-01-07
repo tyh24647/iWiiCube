@@ -40,13 +40,11 @@
 	<true/>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.compressedImageFiles</string>
-		<string>group.compressedZipFiles</string>
-		<string>group.folders</string>
-		<string>group.roms</string>
-		<string>group.roms.dol</string>
-		<string>group.roms.gcm</string>
-		<string>group.roms.iso</string>
+		<string>group.com.tyhostager.compressed</string>
+		<string>group.com.tyhostager.roms</string>
+		<string>group.com.tyhostager.diskImages</string>
+		<string>group.com.tyhostager.saveFiles</string>
+		<string>group.com.tyhostager.files</string>
 	</array>
 	<key>inter-app-audio</key>
 	<true/>
