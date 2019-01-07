@@ -16,6 +16,12 @@
 		1AFB605821E3227800FF67A9 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1AFB605621E3227800FF67A9 /* LaunchScreen.storyboard */; };
 		1AFB606321E3227800FF67A9 /* iWiiCubeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFB606221E3227800FF67A9 /* iWiiCubeTests.swift */; };
 		1AFB606E21E3227800FF67A9 /* iWiiCubeUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1AFB606D21E3227800FF67A9 /* iWiiCubeUITests.swift */; };
+		1AFB607E21E323C600FF67A9 /* AuthenticationServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFB607D21E323C600FF67A9 /* AuthenticationServices.framework */; };
+		1AFB608021E323DB00FF67A9 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFB607F21E323DB00FF67A9 /* CloudKit.framework */; };
+		1AFB608221E323E000FF67A9 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFB608121E323E000FF67A9 /* StoreKit.framework */; };
+		1AFB608421E323E300FF67A9 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFB608321E323E300FF67A9 /* AudioToolbox.framework */; };
+		1AFB608821E323EE00FF67A9 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFB608721E323EE00FF67A9 /* NetworkExtension.framework */; };
+		1AFB608A21E3240E00FF67A9 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1AFB608921E3240E00FF67A9 /* ExternalAccessory.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +57,13 @@
 		1AFB606921E3227800FF67A9 /* iWiiCubeUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iWiiCubeUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		1AFB606D21E3227800FF67A9 /* iWiiCubeUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iWiiCubeUITests.swift; sourceTree = "<group>"; };
 		1AFB606F21E3227800FF67A9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1AFB607B21E323A500FF67A9 /* iWiiCube.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = iWiiCube.entitlements; sourceTree = "<group>"; };
+		1AFB607D21E323C600FF67A9 /* AuthenticationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AuthenticationServices.framework; path = System/Library/Frameworks/AuthenticationServices.framework; sourceTree = SDKROOT; };
+		1AFB607F21E323DB00FF67A9 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		1AFB608121E323E000FF67A9 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		1AFB608321E323E300FF67A9 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		1AFB608721E323EE00FF67A9 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		1AFB608921E3240E00FF67A9 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +71,12 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				1AFB608A21E3240E00FF67A9 /* ExternalAccessory.framework in Frameworks */,
+				1AFB608221E323E000FF67A9 /* StoreKit.framework in Frameworks */,
+				1AFB607E21E323C600FF67A9 /* AuthenticationServices.framework in Frameworks */,
+				1AFB608021E323DB00FF67A9 /* CloudKit.framework in Frameworks */,
+				1AFB608821E323EE00FF67A9 /* NetworkExtension.framework in Frameworks */,
+				1AFB608421E323E300FF67A9 /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -85,6 +104,7 @@
 				1AFB606121E3227800FF67A9 /* iWiiCubeTests */,
 				1AFB606C21E3227800FF67A9 /* iWiiCubeUITests */,
 				1AFB604721E3227700FF67A9 /* Products */,
+				1AFB607C21E323C600FF67A9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -101,6 +121,7 @@
 		1AFB604821E3227700FF67A9 /* iWiiCube */ = {
 			isa = PBXGroup;
 			children = (
+				1AFB607B21E323A500FF67A9 /* iWiiCube.entitlements */,
 				1AFB604921E3227700FF67A9 /* AppDelegate.swift */,
 				1AFB604B21E3227700FF67A9 /* DocumentBrowserViewController.swift */,
 				1AFB604D21E3227700FF67A9 /* DocumentViewController.swift */,
@@ -131,6 +152,19 @@
 			path = iWiiCubeUITests;
 			sourceTree = "<group>";
 		};
+		1AFB607C21E323C600FF67A9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				1AFB608921E3240E00FF67A9 /* ExternalAccessory.framework */,
+				1AFB608721E323EE00FF67A9 /* NetworkExtension.framework */,
+				1AFB608321E323E300FF67A9 /* AudioToolbox.framework */,
+				1AFB608121E323E000FF67A9 /* StoreKit.framework */,
+				1AFB607F21E323DB00FF67A9 /* CloudKit.framework */,
+				1AFB607D21E323C600FF67A9 /* AuthenticationServices.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,6 +175,7 @@
 				1AFB604221E3227700FF67A9 /* Sources */,
 				1AFB604321E3227700FF67A9 /* Frameworks */,
 				1AFB604421E3227700FF67A9 /* Resources */,
+				1A0B633021E33008009552BE /* Log Build Settings */,
 			);
 			buildRules = (
 			);
@@ -199,6 +234,50 @@
 				TargetAttributes = {
 					1AFB604521E3227700FF67A9 = {
 						CreatedOnToolsVersion = 10.1;
+						SystemCapabilities = {
+							com.apple.AccessWiFi = {
+								enabled = 1;
+							};
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.AutoFillCredentialProvider = {
+								enabled = 1;
+							};
+							com.apple.BackgroundModes = {
+								enabled = 1;
+							};
+							com.apple.InAppPurchase = {
+								enabled = 1;
+							};
+							com.apple.InterAppAudio = {
+								enabled = 1;
+							};
+							com.apple.Keychain = {
+								enabled = 1;
+							};
+							com.apple.Maps.iOS = {
+								enabled = 0;
+							};
+							com.apple.NetworkExtensions.iOS = {
+								enabled = 1;
+							};
+							com.apple.Push = {
+								enabled = 1;
+							};
+							com.apple.SafariKeychain = {
+								enabled = 1;
+							};
+							com.apple.VPNLite = {
+								enabled = 1;
+							};
+							com.apple.WAC = {
+								enabled = 1;
+							};
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					1AFB605D21E3227800FF67A9 = {
 						CreatedOnToolsVersion = 10.1;
@@ -256,6 +335,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		1A0B633021E33008009552BE /* Log Build Settings */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Log Build Settings";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\nexport\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1AFB604221E3227700FF67A9 /* Sources */ = {
@@ -371,7 +471,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -426,7 +526,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.1;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -440,6 +540,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iWiiCube/iWiiCube.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZM57TK6EDW;
 				INFOPLIST_FILE = iWiiCube/Info.plist;
@@ -458,6 +559,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = iWiiCube/iWiiCube.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = ZM57TK6EDW;
 				INFOPLIST_FILE = iWiiCube/Info.plist;

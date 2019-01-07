@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>ATSApplicationFontsPath</key>
+	<string></string>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleDocumentTypes</key>
@@ -10,15 +12,35 @@
 			<key>CFBundleTypeIconFiles</key>
 			<array/>
 			<key>CFBundleTypeName</key>
-			<string>Images</string>
+			<string>All Files</string>
 			<key>CFBundleTypeRole</key>
-			<string>Viewer</string>
+			<string>Editor</string>
 			<key>LSHandlerRank</key>
 			<string>Alternate</string>
 			<key>LSItemContentTypes</key>
 			<array>
+				<string>public.data</string>
+				<string>public.content</string>
 				<string>public.image</string>
 			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeIconFiles</key>
+			<array/>
+			<key>CFBundleTypeName</key>
+			<string>Compressed</string>
+			<key>LSItemContentTypes</key>
+			<array>
+				<string>zip</string>
+				<string>7z</string>
+				<string>rar</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeIconFiles</key>
+			<array/>
+			<key>CFBundleTypeName</key>
+			<string></string>
 		</dict>
 	</array>
 	<key>CFBundleExecutable</key>
@@ -32,10 +54,86 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>1.0.0b1</string>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSEnvironment</key>
+	<dict>
+		<key>ALLOW_ADS</key>
+		<true/>
+		<key>ALLOW_ARCH_CUSTOMIZATION</key>
+		<true/>
+		<key>ALLOW_BOOKMARKS</key>
+		<true/>
+		<key>ALLOW_CLOUD_SAVING</key>
+		<true/>
+		<key>ALLOW_CLOUD_SYNC</key>
+		<true/>
+		<key>ALLOW_CUSTOM_BOOTROMS</key>
+		<false/>
+		<key>ALLOW_DOLPHIN_MODIFICATION</key>
+		<true/>
+		<key>ALLOW_FILE_CREATION</key>
+		<true/>
+		<key>ALLOW_FILE_MODIFICATION</key>
+		<true/>
+		<key>ALLOW_FOLDER_CREATION</key>
+		<true/>
+		<key>ALLOW_JIT_COMPILER_MODIFICATION</key>
+		<false/>
+		<key>ALLOW_METAL_MODIFICATION</key>
+		<true/>
+		<key>ALLOW_OPENGL_MODIFICATION</key>
+		<true/>
+		<key>ALLOW_P2P_CONNECTIONS</key>
+		<false/>
+		<key>ALLOW_SAVE_STATES</key>
+		<true/>
+		<key>ALLOW_TORRENT_FILES</key>
+		<false/>
+		<key>ALLOW_VPN</key>
+		<true/>
+		<key>DEBUG</key>
+		<true/>
+		<key>IS_64_BIT</key>
+		<true/>
+		<key>IS_FIRST_RUN</key>
+		<true/>
+		<key>IS_PAID_USER</key>
+		<false/>
+		<key>SAVE_BROWSER_HISTORY</key>
+		<true/>
+		<key>SAVE_PREVIOUS_SESSION_INFO</key>
+		<true/>
+		<key>SHOW_ADS</key>
+		<false/>
+		<key>SHOW_CONSOLE_OUTPUT</key>
+		<true/>
+		<key>SHOW_DEBUG_INFO</key>
+		<true/>
+		<key>SHOW_ERROR_DETAILS</key>
+		<false/>
+		<key>USER_HAS_FILES</key>
+		<false/>
+	</dict>
+	<key>LSGetAppDiedEvents</key>
+	<true/>
 	<key>LSRequiresIPhoneOS</key>
+	<true/>
+	<key>NSSupportsSuddenTermination</key>
+	<false/>
+	<key>UIApplicationExitsOnSuspend</key>
+	<false/>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>audio</string>
+		<string>bluetooth-central</string>
+		<string>bluetooth-peripheral</string>
+		<string>external-accessory</string>
+		<string>fetch</string>
+		<string>remote-notification</string>
+	</array>
+	<key>UIFileSharingEnabled</key>
 	<true/>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
@@ -45,6 +143,8 @@
 	<array>
 		<string>armv7</string>
 	</array>
+	<key>UIRequiresPersistentWiFi</key>
+	<true/>
 	<key>UISupportedInterfaceOrientations</key>
 	<array>
 		<string>UIInterfaceOrientationPortrait</string>
